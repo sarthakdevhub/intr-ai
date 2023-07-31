@@ -83,7 +83,8 @@ public class AiService {
 			AiRequest request = new AiRequest(model, query);
 			AiResponse response = template.postForObject(url, request, AiResponse.class);
 			String feedback = response.getChoices().get(0).getMessage().getContent();
-			
+
+			result.clear();
 			return feedback;
 		}
 		
